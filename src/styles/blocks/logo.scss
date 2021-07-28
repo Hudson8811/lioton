@@ -1,0 +1,30 @@
+.logo {
+	width: auto;
+	padding: vwd(46) vwd(50);
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 20;
+
+	@include max(md) {
+		width: 100%;
+		padding: vw(30);
+	}
+
+	&__icon {
+		display: block;
+		width: vwd(151);
+		height: vwd(44);
+
+		@include max(md) {
+			width: vw(51);
+			height: vw(15);
+			margin: 0 auto;
+		}
+
+		svg {
+			width: 100%;
+			height: 100%;
+		}
+	}
+}

@@ -1,0 +1,49 @@
+@font-face {
+	font-family: 'Frutiger';
+	src: local('FrutigerNeueLTW1G-Black'), local('FrutigerNeueLTW1G-Black'),
+	url('../fonts/FrutigerNeueLTW1G-Black.otf') format('opentype');
+	font-weight: 900;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Frutiger';
+	src: local('FrutigerNeueLTW1G-BlackIt'), local('FrutigerNeueLTW1G-BlackIt'),
+	url('../fonts/FrutigerNeueLTW1G-BlackIt.otf') format('opentype');
+	font-weight: 900;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Frutiger';
+	src: local('FrutigerNeueLTW1G-Regular'), local('FrutigerNeueLTW1G-Regular'),
+	url('../fonts/FrutigerNeueLTW1G-Regular.otf') format('opentype');
+	font-weight: 400;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Frutiger';
+	src: local('FrutigerNeueLTW1G-Light'), local('FrutigerNeueLTW1G-Light'),
+	url('../fonts/FrutigerNeueLTW1G-Light.otf') format('opentype');
+	font-weight: 300;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Frutiger';
+	src: local('FrutigerNeueLTW1G-LightIt'), local('FrutigerNeueLTW1G-LightIt'),
+	url('../fonts/FrutigerNeueLTW1G-LightIt.otf') format('opentype');
+	font-weight: 300;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: local('Montserrat-Bold'), local('Montserrat-Bold'),
+	url('../fonts/Montserrat-Bold.ttf') format('truetype');
+	font-weight: 700;
+	font-display: swap;
+}

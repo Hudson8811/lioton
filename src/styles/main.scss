@@ -1,0 +1,30 @@
+/* base */
+@import "base/var";
+@import "base/reset";
+@import "base/fonts";
+@import "base/animation";
+
+/* mixin */
+@import "base/mixin";
+
+/* libs */
+@import "./../../node_modules/swiper/swiper";
+@import "libs/jquery.fancybox.css";
+
+/* main */
+@import "partials/main";
+
+/* components */
+@import "partials/header";
+@import "partials/footer";
+
+/* blocks */
+@import "blocks/logo";
+@import "blocks/brand";
+@import "blocks/socials";
+@import "blocks/bubble";
+@import "blocks/banner";
+@import "blocks/first-screen";
+@import "blocks/advertising";
+@import "blocks/quiz";
+@import "blocks/lifehack";

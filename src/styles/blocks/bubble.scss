@@ -1,0 +1,32 @@
+.bubble {
+	width: vwd(138);
+	height: vwd(272);
+	border-radius: 50%;
+	border: vwd(2) solid $white;
+	transform: rotate(72.84deg);
+	position: absolute;
+
+	@include max(md) {
+		border: vw(1) solid $white;
+	}
+
+	span {
+		display: block;
+		font-size: vwd(65);
+		line-height: vwd(78);
+		font-weight: 300;
+		text-transform: uppercase;
+		letter-spacing: 0.01em;
+		color: $white;
+		transform: rotate(-103.48deg);
+		margin-left: vwd(-5);
+		margin-top: vwd(9);
+
+		@include max(md) {
+			font-size: vw(30);
+			line-height: vw(36);
+			text-transform: none;
+			transform: rotate(-73deg);
+		}
+	}
+}

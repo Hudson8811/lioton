@@ -1,0 +1,25 @@
+.socials {
+	display: flex;
+	align-items: center;
+
+	&__item {
+		display: block;
+		width: vwd(31);
+		height: vwd(31);
+		transition: transform 0.3s ease;
+
+		@include hover {
+			transform: scale(1.15);
+		}
+
+		+ .socials__item {
+			margin-left: vwd(6);
+		}
+
+		svg {
+			width: 100%;
+			height: 100%;
+			fill: $white;
+		}
+	}
+}

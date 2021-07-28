@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="css/main.min.css" rel="stylesheet">
+    <title>Главная</title>
+  </head>
+  <body>
+    <main class="main">
+      <section class="first-screen">
+        <div class="logo"><a class="logo__icon" href="#">
+            <svg>
+              <use xlink:href="./images/sprite.svg#logo"></use>
+            </svg></a></div>
+        <div class="first-screen__left">
+          <div class="first-screen__angle"><img src="images/flowers.png" alt="">
+            <div></div>
+          </div>
+          <div class="first-screen__title">
+            <p>Полезно</p><img src="images/vs.png" alt="">
+            <p>Вредно</p>
+          </div>
+          <div class="first-screen__subtitle first-screen__subtitle--bold">
+            Хотите узнать, как справиться <br class="mbr"> с тяжестью в ногах <br class="dbr"> и обрести легкость <br class="mbr"> после тяжелого трудового дня?</div>
+          <div class="first-screen__subtitle">
+            Проверьте свою находчивость и знания с тестом <br class="mbr"> и узнайте <br class="dbr"> больше полезных лайфхаков — ваши <br class="mbr"> ножки этого достойны!</div>
+          <div class="first-screen__begin">
+            <div class="first-screen__arrow">
+              <svg width="7" height="152">
+                <use xlink:href="./images/sprite.svg#arrow"></use>
+              </svg>
+            </div><a class="bubble first-screen__start anchor" href="#quiz"><span>Тест</span></a>
+          </div>
+          <div class="socials first-screen__socials"><a class="socials__item" href="#">
+              <svg width="31" height="31">
+                <use xlink:href="./images/sprite.svg#vk"></use>
+              </svg></a><a class="socials__item" href="#">
+              <svg width="31" height="31">
+                <use xlink:href="./images/sprite.svg#tw"></use>
+              </svg></a><a class="socials__item" href="#">
+              <svg width="31" height="31">
+                <use xlink:href="./images/sprite.svg#ok"></use>
+              </svg></a><a class="socials__item" href="#">
+              <svg width="31" height="31">
+                <use xlink:href="./images/sprite.svg#fb"></use>
+              </svg></a></div>
+        </div>
+        <div class="first-screen__right"><img src="images/legs.png" alt="">
+          <div class="first-screen__content"><a class="first-screen__site" href="www.lioton-gel.ru" target="_blank">www.lioton-gel.ru</a>
+            <div class="brand first-screen__brand">
+              <p>Гепарин натрий</p>
+              <p>Лиотон<sup>&reg;</sup><span>&ndash;</span></p>
+              <p>для здоровья <br> и красоты <br> Ваших ног!</p>
+            </div>
+            <div class="first-screen__notice">имеются противопоказания, ознакомьтесь с инструкцией.</div>
+          </div>
+        </div>
+      </section>
+      <section class="advertising">
+        <div class="advertising__content">
+          <div class="advertising__top">
+            <div class="brand advertising__brand">
+              <p>Гепарин натрий</p>
+              <p>Лиотон<sup>&reg;</sup></p>
+            </div>
+            <div class="advertising__title">Для здоровья и красоты Ваших ног!</div>
+          </div>
+          <div class="advertising__row"><img src="images/cream.png" alt="">
+            <div class="advertising__middle-text">
+              <p>Отеки, тяжесть, боль в ногах?</p>
+              <p>Своевременно позаботьтесь о Ваших <br> ножках – вместе с гелем Лиотон<sup>&reg;</sup>!*</p>
+            </div>
+          </div>
+          <div class="advertising__bottom">
+            <p>*показан при заболеваниях поверхностных вен</p>
+            <p class="big">имеются противопоказания, ознакомьтесь с инструкцией.</p>
+            <p>ООО «Берлин-Хеми/А. Менарини», 123317, г. Москва, Пресненская набережная, д. 10, БЦ «Башня на набережной», Блок Б.</p>
+          </div>
+        </div>
+        <div class="advertising__image"><img src="images/woman.jpg" alt=""></div>
+      </section>
+      <section class="quiz" id="quiz">
+        <div class="logo quiz__logo"><a class="logo__icon" href="#">
+            <svg>
+              <use xlink:href="./images/sprite.svg#logo"></use>
+            </svg></a></div>
+        <div class="quiz__question-num-outer">–– <span class="current">01</span></div>
+        <div class="quiz__block quiz__block--question">
+          <button class="bubble quiz__choice quiz__choice--true" data-correct="true"><span>Полезно</span></button>
+          <div class="quiz__main">
+            <div class="quiz__bg"></div>
+            <div class="quiz__content">
+              <div class="quiz__arrow">
+                <svg width="7" height="152">
+                  <use xlink:href="./images/sprite.svg#arrow"></use>
+                </svg>
+              </div>
+              <div class="quiz__step"><span class="current">I</span><span>/</span><span class="all">X</span></div>
+              <div class="quiz__image"><img src="images/quiz/1.jpg" alt=""></div>
+              <div class="quiz__qiestion-num">Вопрос <span class="quest-digit">1</span></div>
+              <div class="quiz__qiestion">Необходимо ли двигаться и больше гулять для предотвращения варикоза?</div>
+              <div class="quiz__arrow quiz__arrow--next">
+                <svg width="7" height="152">
+                  <use xlink:href="./images/sprite.svg#arrow"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <button class="bubble quiz__choice quiz__choice--false" data-correct="false"><span>Вредно</span></button>
+        </div>
+        <div class="quiz__block quiz__block--answer">
+          <div class="bubble quiz__choice quiz__choice--correct"><span>Верно!</span></div>
+          <div class="bubble quiz__choice quiz__choice--incorrect"><span>Неверно!</span></div>
+          <div class="quiz__main">
+            <div class="quiz__bg"></div>
+            <div class="quiz__content">
+              <svg class="circle-small" width="93" height="185">
+                <use xlink:href="./images/sprite.svg#circle-small"></use>
+              </svg>
+              <svg class="circle-big" width="224" height="447">
+                <use xlink:href="./images/sprite.svg#circle-big"></use>
+              </svg>
+              <div class="quiz__step"><span class="current">VI</span><span>/</span><span class="all">X</span></div>
+              <div class="quiz__answer">Это полезно!</div>
+              <div class="quiz__answer-subtitle">Поднимать ноги и упирать их в стенку можно не только вечером.</div>
+              <div class="quiz__answer-text">
+                <p>Отток крови поможет в профилактике проблем с венами.</p>
+                <p>При возникновении тяжести, отеков, боли в ногах и других тревожных симптомов обязательно посетите врача-флеболога.</p>
+              </div>
+              <div class="quiz__arrow quiz__arrow--next">
+                <svg width="7" height="152">
+                  <use xlink:href="./images/sprite.svg#arrow"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <button class="bubble quiz__choice quiz__choice--false quiz__next"><span>Далее</span></button>
+        </div>
+        <div class="quiz__block quiz__block--result">
+          <div class="bubble quiz__choice quiz__choice--result"><span>Отлично!</span></div>
+          <div class="quiz__main">
+            <div class="quiz__bg"></div>
+            <div class="quiz__content"><img src="images/result.png" alt="">
+              <div class="quiz__result-points">
+                <p><span class="your-point">8</span> / 10</p>
+                <p><span class="your-point">8</span> правильных ответов из 10!</p>
+              </div>
+              <div class="quiz__result-title">Ваш результат!</div>
+              <div class="quiz__result-text">Отличный результат, закрепите знания почитав лайфхаки от Лиотон!</div>
+              <div class="socials quiz__result-socials"><a class="socials__item" href="#">
+                  <svg width="31" height="31">
+                    <use xlink:href="./images/sprite.svg#vk"></use>
+                  </svg></a><a class="socials__item" href="#">
+                  <svg width="31" height="31">
+                    <use xlink:href="./images/sprite.svg#tw"></use>
+                  </svg></a><a class="socials__item" href="#">
+                  <svg width="31" height="31">
+                    <use xlink:href="./images/sprite.svg#ok"></use>
+                  </svg></a><a class="socials__item" href="#">
+                  <svg width="31" height="31">
+                    <use xlink:href="./images/sprite.svg#fb"></use>
+                  </svg></a></div>
+              <div class="quiz__arrow quiz__arrow--next">
+                <svg width="7" height="152">
+                  <use xlink:href="./images/sprite.svg#arrow"></use>
+                </svg>
+              </div>
+            </div>
+          </div><a class="bubble quiz__choice quiz__choice--lifehack anchor" href="#lifehack"><span>Лайфхаки</span></a>
+        </div>
+        <div class="quiz__pagi">
+          <p><span class="current">1</span>/10</p>
+          <div class="quiz__dots">
+            <p></p>
+          </div>
+        </div>
+        <div class="socials quiz__socials"><a class="socials__item" href="#">
+            <svg width="31" height="31">
+              <use xlink:href="./images/sprite.svg#vk"></use>
+            </svg></a><a class="socials__item" href="#">
+            <svg width="31" height="31">
+              <use xlink:href="./images/sprite.svg#tw"></use>
+            </svg></a><a class="socials__item" href="#">
+            <svg width="31" height="31">
+              <use xlink:href="./images/sprite.svg#ok"></use>
+            </svg></a><a class="socials__item" href="#">
+            <svg width="31" height="31">
+              <use xlink:href="./images/sprite.svg#fb"></use>
+            </svg></a></div>
+      </section>
+      <section class="advertising advertising--mobile">
+        <div class="advertising__content">
+          <div class="advertising__top">
+            <div class="brand advertising__brand">
+              <p>Гепарин натрий</p>
+              <p>Лиотон<sup>&reg;</sup></p>
+            </div>
+            <div class="advertising__title">Для здоровья и красоты Ваших ног!</div>
+          </div>
+          <div class="advertising__row"><img src="images/cream.png" alt="">
+            <div class="advertising__middle-text">
+              <p>Отеки, тяжесть, боль в ногах?</p>
+              <p>Своевременно позаботьтесь о Ваших <br> ножках – вместе с гелем Лиотон<sup>&reg;</sup>!*</p>
+            </div>
+          </div>
+          <div class="advertising__bottom">
+            <p>*показан при заболеваниях поверхностных вен</p>
+            <p class="big">имеются противопоказания, ознакомьтесь с инструкцией.</p>
+            <p>ООО «Берлин-Хеми/А. Менарини», 123317, г. Москва, Пресненская набережная, д. 10, БЦ «Башня на набережной», Блок Б.</p>
+          </div>
+        </div>
+        <div class="advertising__image"><img src="images/woman.jpg" alt=""></div>
+      </section>
+      <section class="lifehack" id="lifehack">
+        <div class="lifehack__left">
+          <div class="lifehack__title">Лайфхаки</div>
+          <div class="lifehack__subtitle">Как сохранить здоровье и красоту <br> ––– Ваших ножек</div>
+          <div class="lifehack__slider">
+            <div class="swiper-container __js_carousel">
+              <div class="swiper-wrapper">
+                <div class="lifehack__slide swiper-slide"><img src="images/flowers.png" alt="">
+                  <div class="lifehack__inner">
+                    <div class="lifehack__slide-title">Массаж поможет от отеков  <br> и тяжести</div>
+                    <div class="lifehack__slide-text">
+                      <p>Но будьте осторожны – роликовый и вакуумный массаж при варикозе проводить не рекомендуется.</p>
+                      <p>Эти процедуры могут повредить вздутые вены.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="lifehack__slide swiper-slide"><img src="images/flowers.png" alt="">
+                  <div class="lifehack__inner">
+                    <div class="lifehack__slide-title">Чаще меняйте позу</div>
+                    <div class="lifehack__slide-text">
+                      <p>Чаще меняйте позу и старайтесь больше двигаться в течение дня.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="lifehack__slide swiper-slide"><img src="images/flowers.png" alt="">
+                  <div class="lifehack__inner">
+                    <div class="lifehack__slide-title">Приподнимайте периодически ноги</div>
+                    <div class="lifehack__slide-text">
+                      <p>Приподнимайте периодически ноги с помощью подушки, скамеечки или ставьте на перекладину письменного стола.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="lifehack__slide swiper-slide"><img src="images/flowers.png" alt="">
+                  <div class="lifehack__inner">
+                    <div class="lifehack__slide-title">Исключите узкую и неудобную обувь</div>
+                    <div class="lifehack__slide-text">
+                      <p>Исключите по возможности узкую и неудобную обувь — она усугубляет проблемы с ногами.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="lifehack__slide swiper-slide"><img src="images/flowers.png" alt="">
+                  <div class="lifehack__inner">
+                    <div class="lifehack__slide-title">Носите меньше тяжестей</div>
+                    <div class="lifehack__slide-text">
+                      <p>Не ставьте на колени тяжелые сумки и носите меньше тяжестей.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="lifehack__slide swiper-slide"><img src="images/flowers.png" alt="">
+                  <div class="lifehack__inner">
+                    <div class="lifehack__slide-title">Не давайте ногам затекать</div>
+                    <div class="lifehack__slide-text">
+                      <p>Не давайте ногам затекать, шевелите и двигайте, чтобы ступни не находились в одном положении.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="lifehack__slide swiper-slide"><img src="images/flowers.png" alt="">
+                  <div class="lifehack__inner">
+                    <div class="lifehack__slide-title">Пейте больше жидкости</div>
+                    <div class="lifehack__slide-text">
+                      <p>Пейте больше жидкости и сократите количество соленого и жареного.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="lifehack__slide swiper-slide"><img src="images/flowers.png" alt="">
+                  <div class="lifehack__inner">
+                    <div class="lifehack__slide-title">Следите за фигурой</div>
+                    <div class="lifehack__slide-text">
+                      <p>Лишний вес — дополнительный фактор развития варикоза, следите за фигурой.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="lifehack__slide swiper-slide"><img src="images/flowers.png" alt="">
+                  <div class="lifehack__inner">
+                    <div class="lifehack__slide-title">Избегайте узких резинок</div>
+                    <div class="lifehack__slide-text">
+                      <p>Капроновые гольфы и чулки с узкой резинкой — враги, нарушающие венозный кровоток.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="lifehack__slide swiper-slide"><img src="images/flowers.png" alt="">
+                  <div class="lifehack__inner">
+                    <div class="lifehack__slide-title">Делайте ванночки и компрессы</div>
+                    <div class="lifehack__slide-text">
+                      <p>Делайте ванночки, компрессы и используйте специальные средства для красоты и здоровья ног.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slider-prev">
+              <svg width="101" height="6" viewBox="0 0 101 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 3L99 3M99 3L95.5018 1M99 3L95.5018 5" stroke="#005CA3" stroke-width="1.5"></path>
+              </svg>
+            </div>
+            <div class="slider-next">
+              <svg width="101" height="6" viewBox="0 0 101 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 3L99 3M99 3L95.5018 1M99 3L95.5018 5" stroke="#005CA3" stroke-width="1.5"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="lifehack__nav">
+            <div class="lifehack__fraction"><span class="current">1</span> / 10</div>
+            <div class="lifehack__pagination"></div>
+          </div>
+        </div>
+        <div class="lifehack__right">
+          <div class="banner">
+            <div class="banner__top"><img src="images/manufacturer.png" alt="">
+              <div class="banner__top-image"><img src="images/cream.png" alt=""></div>
+              <div class="banner__text">Способствует <br class="mbr"> уменьшению:
+                <ul>
+                  <li>отеков</li>
+                  <li>усталости,</li>
+                  <li>тяжести в ногах</li>
+                </ul>
+              </div>
+              <div class="banner__ps">*показан при заболеваниях поверхностных вен</div>
+              <div class="banner__contacts">
+                123317, г. Москва, Пресненская набережная, д. 10, БЦ “Башня на набережной” , Блок Б. Отпускается без рецепта. RU-LIO-10-2018, утв. 12.2018</div>
+            </div>
+            <div class="banner__bottom">
+              <div class="brand banner__brand">
+                <p>Гепарин натрий</p>
+                <p>Лиотон<sup>&reg;</sup></p>
+              </div>
+              <div class="banner__image"><img src="images/legs-2.jpg" alt="">
+                <div class="banner__notice">имеются противопоказания, ознакомьтесь с инструкцией.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer__text">имеются противопоказания, ознакомьтесь с инструкцией.</div>
+    </footer>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+.brand {
+	max-width: vwd(433);
+	color: $dark-blue;
+
+	@include max(md) {
+		max-width: vw(170);
+	}
+
+	p {
+		&:first-child {
+			font-size: vwd(13);
+			font-weight: 300;
+			font-style: italic;
+			text-align: right;
+			letter-spacing: 0.06em;
+			padding-right: vwd(104);
+
+			@include max(md) {
+				font-size: vw(6);
+				letter-spacing: 0.01em;
+				padding-right: vw(13);
+			}
+		}
+
+		&:nth-child(2) {
+			font-size: vwd(84);
+			line-height: vwd(22);
+			font-weight: 700;
+			font-style: italic;
+
+			@include max(md) {
+				font-size: vw(34);
+				line-height: vw(9);
+			}
+
+			sup {
+				font-size: vwd(40);
+
+				@include max(md) {
+					font-size: vw(20);
+				}
+			}
+
+			span {
+				font-style: normal;
+			}
+		}
+
+		&:nth-child(3) {
+			font-size: vwd(40);
+			line-height: vwd(45);
+			font-weight: 900;
+			letter-spacing: 0.07em;
+			text-align: right;
+			margin-top: vwd(34);
+			padding-right: vwd(47);
+
+			@include max(md) {
+				font-size: vw(16);
+				line-height: vw(18);
+				margin-top: vw(14);
+				padding-right: 0;
+			}
+		}
+	}
+}

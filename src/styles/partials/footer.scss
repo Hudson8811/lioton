@@ -1,0 +1,26 @@
+.footer {
+	width: 100%;
+	padding: 58px 10px;
+	background-color: $blue-link;
+	box-sizing: border-box;
+
+	@include max(md) {
+		padding: 16px 10px;
+	}
+
+	&__text {
+		font-size: 55px;
+		line-height: 57px;
+		font-weight: 300;
+		color: rgba($white, 0.53%);
+		text-align: center;
+		text-transform: uppercase;
+		letter-spacing: 0.025em;
+
+		@include max(md) {
+			font-size: 18px;
+			line-height: 19px;
+			color: $white;
+		}
+	}
+}

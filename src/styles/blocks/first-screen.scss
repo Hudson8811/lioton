@@ -1,0 +1,264 @@
+.first-screen {
+	display: flex;
+	height: 100vh;
+	min-height: vwd(1080);
+	overflow: hidden;
+
+	@include max(md) {
+		flex-direction: column;
+		height: auto;
+		min-height: 100%;
+	}
+
+	&__left {
+		width: 59%;
+		padding: vwd(236) vwd(178) vwd(63);
+		background-color: $mainColor;
+		position: relative;
+
+		@include max(md) {
+			width: 100%;
+			padding: vw(67) vw(5) vw(62);
+		}
+	}
+
+	&__right {
+		width: 41%;
+		padding: vwd(58) vwd(26) vwd(22);
+		background: linear-gradient(0deg, #8CAED3 5.58%, rgba(140, 174, 211, 0) 100%);
+		position: relative;
+
+		@include max(md) {
+			width: 100%;
+			padding: vw(51) vw(5) vw(10);
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+		}
+	}
+
+	&__angle {
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: vwd(81) vwd(80) 0 0;
+
+		@include max(md) {
+			padding: vw(36) vw(13) 0 0;
+		}
+
+		div {
+			width: vwd(394);
+			height: vwd(356);
+			border-top: vw(2) solid $white;
+			border-right: vw(2) solid $white;
+			position: relative;
+
+			@include max(md) {
+				width: vw(107);
+				height: vw(104);
+			}
+		}
+
+		img {
+			position: absolute;
+			top: vwd(33);
+			right: vwd(12);
+
+			@include max(md) {
+				top: vw(16);
+				right: vw(-25);
+			}
+		}
+	}
+
+	&__title {
+		display: inline-block;
+		max-width: vwd(634);
+		font-size: vwd(120);
+		line-height: vwd(120);
+		font-weight: 900;
+		color: $white;
+		letter-spacing: 0.039em;
+		position: relative;
+		margin-bottom: vwd(64);
+
+		@include max(md) {
+			max-width: vw(200);
+			padding-right: vw(47);
+			font-size: vw(30);
+			line-height: vw(32);
+			text-align: center;
+			left: 50%;
+			transform: translateX(-50%);
+			margin-bottom: vw(23);
+		}
+
+		p {
+			&:last-of-type {
+				padding-left: vwd(72);
+			}
+		}
+
+		img {
+			position: absolute;
+			right: vwd(-36);
+			top: vwd(94);
+
+			@include max(md) {
+				width: vw(23);
+				height: vw(23);
+				right: vw(19);
+				top: vw(12);
+			}
+		}
+	}
+
+	&__subtitle {
+		font-size: vwd(24);
+		line-height: vwd(34);
+		color: $white;
+		letter-spacing: -0.015em;
+		padding-left: vwd(5);
+
+		@include max(md) {
+			font-size: vw(12);
+			line-height: vw(22);
+			text-align: center;
+		}
+
+		&--bold {
+			letter-spacing: 0.035em;
+			font-weight: 900;
+			margin-bottom: vwd(47);
+
+			@include max(md) {
+				margin-bottom: vw(20);
+			}
+		}
+	}
+
+	&__begin {
+		position: relative;
+	}
+
+	&__arrow {
+		display: inline-block;
+		position: relative;
+		margin-left: 38.7%;
+		margin-top: vwd(18);
+
+		@include max(md) {
+			margin-left: 44%;
+		}
+
+		svg {
+			@include max(md) {
+				width: vw(3);
+				height: vw(45);
+			}
+		}
+	}
+
+	&__start {
+		display: block;
+		bottom: vwd(-150);
+		left: 37%;
+		transition: box-shadow 0.3s ease;
+
+		@include max(md) {
+			width: vw(64);
+			height: vw(126);
+			bottom: unset;
+			top: 0;
+			left: 40%;
+		}
+
+		@include hover {
+			box-shadow: 0 vwd(4) vwd(5) rgba(255, 255, 255, 0.25);
+		}
+
+		span {
+			margin-left: 0;
+			margin-top: vwd(100);
+
+			@include max(md) {
+				margin-top: vw(48);
+			}
+		}
+	}
+
+	&__content {
+		position: relative;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__site {
+		display: block;
+		margin-right: vwd(42);
+		font-size: vwd(24);
+		line-height: vwd(29);
+		color: $blue-link;
+		text-align: right;
+		letter-spacing: -0.01em;
+
+		@include max(md) {
+			display: none;
+		}
+
+		@include hover {
+			text-decoration: underline;
+		}
+	}
+
+	&__brand {
+		margin-top: vwd(115);
+		margin-left: vwd(40);
+
+		@include max(md) {
+			margin-top: 0;
+			margin-left: 0;
+			padding-left: vw(25);
+		}
+	}
+
+	&__notice {
+		font-size: vwd(24);
+		text-transform: uppercase;
+		letter-spacing: -0.074em;
+		color: $white;
+		margin-top: auto;
+
+		@include max(md) {
+			font-size: vw(10);
+			line-height: vw(13);
+			letter-spacing: -0.05em;
+			text-align: center;
+			margin-top: vw(275);
+		}
+	}
+
+	&__socials {
+		position: absolute;
+		bottom: vwd(31);
+		left: vwd(49);
+
+		@include max(md) {
+			display: none;
+		}
+
+		.socials__item + .socials__item {
+			margin-left: vwd(10);
+		}
+	}
+}

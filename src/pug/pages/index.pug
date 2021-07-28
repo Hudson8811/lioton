@@ -1,0 +1,273 @@
+extends ../layouts/default
+
+block vars
+	-
+		const page = {
+			title: 'Главная'
+		};
+
+block main
+	section.first-screen
+		.logo
+			a.logo__icon(href='#')
+				+icon('logo')
+		.first-screen__left
+			.first-screen__angle
+				img(src='images/flowers.png', alt='')
+				div
+			.first-screen__title
+				p Полезно
+				img(src='images/vs.png', alt='')
+				p Вредно
+			.first-screen__subtitle.first-screen__subtitle--bold Хотите узнать, как справиться <br class="mbr"> с тяжестью в ногах <br class="dbr">
+				|  и обрести легкость <br class="mbr"> после тяжелого трудового дня?
+			.first-screen__subtitle Проверьте свою находчивость и знания с тестом <br class="mbr"> и узнайте <br class="dbr">
+				|  больше полезных лайфхаков — ваши <br class="mbr"> ножки этого достойны!
+			.first-screen__begin
+				.first-screen__arrow
+					+icon('arrow')(width='7', height='152')
+				a.bubble.first-screen__start.anchor(href='#quiz')
+					span Тест
+			.socials.first-screen__socials
+				a.socials__item(href='#')
+					+icon('vk')(width='31', height='31')
+				a.socials__item(href='#')
+					+icon('tw')(width='31', height='31')
+				a.socials__item(href='#')
+					+icon('ok')(width='31', height='31')
+				a.socials__item(href='#')
+					+icon('fb')(width='31', height='31')
+		.first-screen__right
+			img(src='images/legs.png', alt='')
+			.first-screen__content
+				a.first-screen__site(href='www.lioton-gel.ru', target='_blank') www.lioton-gel.ru
+				.brand.first-screen__brand
+					p Гепарин натрий
+					p Лиотон<sup>&reg;</sup><span>&ndash;</span>
+					p для здоровья <br> и красоты <br> Ваших ног!
+				.first-screen__notice имеются противопоказания, ознакомьтесь с инструкцией.
+
+	section.advertising
+		.advertising__content
+			.advertising__top
+				.brand.advertising__brand
+					p Гепарин натрий
+					p Лиотон<sup>&reg;</sup>
+				.advertising__title Для здоровья и красоты Ваших ног!
+			.advertising__row
+				img(src='images/cream.png', alt='')
+				.advertising__middle-text
+					p Отеки, тяжесть, боль в ногах?
+					p Своевременно позаботьтесь о Ваших <br> ножках – вместе с гелем Лиотон<sup>&reg;</sup>!*
+			.advertising__bottom
+				p *показан при заболеваниях поверхностных вен
+				p.big имеются противопоказания, ознакомьтесь с инструкцией.
+				p ООО «Берлин-Хеми/А. Менарини», 123317, г. Москва, Пресненская набережная, д. 10, БЦ «Башня на набережной», Блок Б.
+		.advertising__image
+			img(src='images/woman.jpg', alt='')
+
+	section#quiz.quiz
+		.logo.quiz__logo
+			a.logo__icon(href='#')
+				+icon('logo')
+		.quiz__question-num-outer –– <span class="current">01</span>
+		.quiz__block.quiz__block--question
+			button.bubble.quiz__choice.quiz__choice--true(data-correct='true')
+				span Полезно
+			.quiz__main
+				.quiz__bg
+				.quiz__content
+					.quiz__arrow
+						+icon('arrow')(width='7', height='152')
+					.quiz__step
+						span.current I
+						span /
+						span.all X
+					.quiz__image
+						img(src='images/quiz/1.jpg', alt='')
+					.quiz__qiestion-num Вопрос <span class="quest-digit">1</span>
+					.quiz__qiestion Необходимо ли двигаться и больше гулять для предотвращения варикоза?
+					.quiz__arrow.quiz__arrow--next
+						+icon('arrow')(width='7', height='152')
+			button.bubble.quiz__choice.quiz__choice--false(data-correct='false')
+				span Вредно
+		.quiz__block.quiz__block--answer
+			.bubble.quiz__choice.quiz__choice--correct
+				span Верно!
+			.bubble.quiz__choice.quiz__choice--incorrect
+				span Неверно!
+			.quiz__main
+				.quiz__bg
+				.quiz__content
+					+icon('circle-small')(class='circle-small', width='93', height='185')
+					+icon('circle-big')(class='circle-big', width='224', height='447')
+					.quiz__step
+						span.current VI
+						span /
+						span.all X
+					.quiz__answer Это полезно!
+					.quiz__answer-subtitle Поднимать ноги и упирать их в стенку можно не только вечером.
+					.quiz__answer-text
+						p Отток крови поможет в профилактике проблем с венами.
+						p При возникновении тяжести, отеков, боли в ногах и других тревожных симптомов обязательно посетите врача-флеболога.
+					.quiz__arrow.quiz__arrow--next
+						+icon('arrow')(width='7', height='152')
+			button.bubble.quiz__choice.quiz__choice--false.quiz__next
+				span Далее
+		.quiz__block.quiz__block--result
+			.bubble.quiz__choice.quiz__choice--result
+				span Отлично!
+			.quiz__main
+				.quiz__bg
+				.quiz__content
+					img(src='images/result.png', alt='')
+					.quiz__result-points
+						p <span class="your-point">8</span> / 10
+						p <span class="your-point">8</span> правильных ответов из 10!
+					.quiz__result-title Ваш результат!
+					.quiz__result-text Отличный результат, закрепите знания почитав лайфхаки от Лиотон!
+					.socials.quiz__result-socials
+						a.socials__item(href='#')
+							+icon('vk')(width='31', height='31')
+						a.socials__item(href='#')
+							+icon('tw')(width='31', height='31')
+						a.socials__item(href='#')
+							+icon('ok')(width='31', height='31')
+						a.socials__item(href='#')
+							+icon('fb')(width='31', height='31')
+					.quiz__arrow.quiz__arrow--next
+						+icon('arrow')(width='7', height='152')
+			a.bubble.quiz__choice.quiz__choice--lifehack.anchor(href='#lifehack')
+				span Лайфхаки
+		.quiz__pagi
+			p <span class="current">1</span>/10
+			.quiz__dots
+				p
+		.socials.quiz__socials
+			a.socials__item(href='#')
+				+icon('vk')(width='31', height='31')
+			a.socials__item(href='#')
+				+icon('tw')(width='31', height='31')
+			a.socials__item(href='#')
+				+icon('ok')(width='31', height='31')
+			a.socials__item(href='#')
+				+icon('fb')(width='31', height='31')
+
+
+	section.advertising.advertising--mobile
+		.advertising__content
+			.advertising__top
+				.brand.advertising__brand
+					p Гепарин натрий
+					p Лиотон<sup>&reg;</sup>
+				.advertising__title Для здоровья и красоты Ваших ног!
+			.advertising__row
+				img(src='images/cream.png', alt='')
+				.advertising__middle-text
+					p Отеки, тяжесть, боль в ногах?
+					p Своевременно позаботьтесь о Ваших <br> ножках – вместе с гелем Лиотон<sup>&reg;</sup>!*
+			.advertising__bottom
+				p *показан при заболеваниях поверхностных вен
+				p.big имеются противопоказания, ознакомьтесь с инструкцией.
+				p ООО «Берлин-Хеми/А. Менарини», 123317, г. Москва, Пресненская набережная, д. 10, БЦ «Башня на набережной», Блок Б.
+		.advertising__image
+			img(src='images/woman.jpg', alt='')
+
+	section#lifehack.lifehack
+		.lifehack__left
+			.lifehack__title Лайфхаки
+			.lifehack__subtitle Как сохранить здоровье и красоту <br> ––– Ваших ножек
+			.lifehack__slider
+				.swiper-container.__js_carousel
+					.swiper-wrapper
+						.lifehack__slide.swiper-slide
+							img(src='images/flowers.png', alt='')
+							.lifehack__inner
+								.lifehack__slide-title Массаж поможет от отеков  <br> и тяжести
+								.lifehack__slide-text
+									p Но будьте осторожны – роликовый и вакуумный массаж при варикозе проводить не рекомендуется.
+									p Эти процедуры могут повредить вздутые вены.
+						.lifehack__slide.swiper-slide
+							img(src='images/flowers.png', alt='')
+							.lifehack__inner
+								.lifehack__slide-title Чаще меняйте позу
+								.lifehack__slide-text
+									p Чаще меняйте позу и старайтесь больше двигаться в течение дня.
+						.lifehack__slide.swiper-slide
+							img(src='images/flowers.png', alt='')
+							.lifehack__inner
+								.lifehack__slide-title Приподнимайте периодически ноги
+								.lifehack__slide-text
+									p Приподнимайте периодически ноги с помощью подушки, скамеечки или ставьте на перекладину письменного стола.
+						.lifehack__slide.swiper-slide
+							img(src='images/flowers.png', alt='')
+							.lifehack__inner
+								.lifehack__slide-title Исключите узкую и неудобную обувь
+								.lifehack__slide-text
+									p Исключите по возможности узкую и неудобную обувь — она усугубляет проблемы с ногами.
+						.lifehack__slide.swiper-slide
+							img(src='images/flowers.png', alt='')
+							.lifehack__inner
+								.lifehack__slide-title Носите меньше тяжестей
+								.lifehack__slide-text
+									p Не ставьте на колени тяжелые сумки и носите меньше тяжестей.
+						.lifehack__slide.swiper-slide
+							img(src='images/flowers.png', alt='')
+							.lifehack__inner
+								.lifehack__slide-title Не давайте ногам затекать
+								.lifehack__slide-text
+									p Не давайте ногам затекать, шевелите и двигайте, чтобы ступни не находились в одном положении.
+						.lifehack__slide.swiper-slide
+							img(src='images/flowers.png', alt='')
+							.lifehack__inner
+								.lifehack__slide-title Пейте больше жидкости
+								.lifehack__slide-text
+									p Пейте больше жидкости и сократите количество соленого и жареного.
+						.lifehack__slide.swiper-slide
+							img(src='images/flowers.png', alt='')
+							.lifehack__inner
+								.lifehack__slide-title Следите за фигурой
+								.lifehack__slide-text
+									p Лишний вес — дополнительный фактор развития варикоза, следите за фигурой.
+						.lifehack__slide.swiper-slide
+							img(src='images/flowers.png', alt='')
+							.lifehack__inner
+								.lifehack__slide-title Избегайте узких резинок
+								.lifehack__slide-text
+									p Капроновые гольфы и чулки с узкой резинкой — враги, нарушающие венозный кровоток.
+						.lifehack__slide.swiper-slide
+							img(src='images/flowers.png', alt='')
+							.lifehack__inner
+								.lifehack__slide-title Делайте ванночки и компрессы
+								.lifehack__slide-text
+									p Делайте ванночки, компрессы и используйте специальные средства для красоты и здоровья ног.
+				.slider-prev
+					svg(width='101' height='6' viewBox='0 0 101 6' fill='none' xmlns='http://www.w3.org/2000/svg')
+						path(d='M0 3L99 3M99 3L95.5018 1M99 3L95.5018 5' stroke='#005CA3' stroke-width='1.5')
+				.slider-next
+					svg(width='101' height='6' viewBox='0 0 101 6' fill='none' xmlns='http://www.w3.org/2000/svg')
+						path(d='M0 3L99 3M99 3L95.5018 1M99 3L95.5018 5' stroke='#005CA3' stroke-width='1.5')
+			.lifehack__nav
+				.lifehack__fraction <span class="current">1</span> / 10
+				.lifehack__pagination
+		.lifehack__right
+			.banner
+				.banner__top
+					img(src='images/manufacturer.png', alt='')
+					.banner__top-image
+						img(src='images/cream.png', alt='')
+					.banner__text Способствует <br class="mbr"> уменьшению:
+						ul
+							li отеков
+							li усталости,
+							li тяжести в ногах
+					.banner__ps *показан при заболеваниях поверхностных вен
+					.banner__contacts 123317, г. Москва, Пресненская набережная, д. 10, БЦ “Башня на набережной” , Блок Б. Отпускается
+						|  без рецепта. RU-LIO-10-2018, утв. 12.2018
+				.banner__bottom
+					.brand.banner__brand
+						p Гепарин натрий
+						p Лиотон<sup>&reg;</sup>
+					.banner__image
+						img(src='images/legs-2.jpg', alt='')
+						.banner__notice имеются противопоказания, ознакомьтесь с инструкцией.

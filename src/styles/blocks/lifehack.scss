@@ -1,0 +1,271 @@
+.lifehack {
+	display: flex;
+
+	@include max(md) {
+		flex-direction: column;
+	}
+
+	&__left {
+		width: 77.6%;
+		padding: vwd(157) vwd(185) vwd(80);
+
+		@include max(md) {
+			width: 100%;
+			padding: vw(50) vw(5) vw(32);
+		}
+	}
+
+	&__right {
+		width: 22.4%;
+
+		@include max(md) {
+			width: 100%;
+		}
+	}
+
+	&__title {
+		font-size: vwd(96);
+		line-height: vwd(115);
+		font-weight: 900;
+		letter-spacing: 0.05em;
+		color: $blue-link;
+
+		@include max(md) {
+			font-size: vw(30);
+			line-height: vw(36);
+			text-align: center;
+		}
+	}
+
+	&__subtitle {
+		font-size: vwd(30);
+		line-height: vwd(40);
+		font-weight: 900;
+		color: $dark-blue;
+		margin-top: vwd(57);
+
+		@include max(md) {
+			font-size: vw(12);
+			line-height: vw(22);
+			text-align: center;
+			margin-top: vw(11);
+		}
+	}
+
+	&__slider {
+		width: vwd(790);
+		padding: vwd(20) vwd(25);
+		margin: vwd(86) auto 0;
+		position: relative;
+
+		@include max(md) {
+			width: 100%;
+			padding: vw(20) vw(6);
+			margin-top: vw(11);
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: $blue-8c;
+			border: vwd(9) solid $blue-10;
+			border-radius: vwd(23);
+			transform: rotate(3deg);
+			margin: vwd(20) vwd(25);
+
+			@include max(md) {
+				border-width: vw(4);
+				border-radius: vw(9);
+				transform: rotate(1.5deg);
+			}
+		}
+	}
+
+	&__slide {
+		width: 100%;
+		padding: vwd(67) vwd(43) vwd(30) vwd(70);
+		border: vwd(9) solid $blue-link;
+		border-radius: vwd(23);
+		background-color: $white;
+		position: relative;
+
+		@include max(md) {
+			padding: vw(39) vw(32) vw(28);
+			border-width: vw(4);
+			border-radius: vw(9);
+		}
+
+		img {
+			width: vwd(237);
+			height: vwd(193);
+			position: absolute;
+			top: vwd(20);
+			right: vwd(20);
+
+			@include max(md) {
+				width: vw(111);
+				height: vw(72);
+				top: vw(8);
+				right: vw(9);
+			}
+		}
+	}
+
+	&__inner {
+		height: 100%;
+		padding: vwd(206) vwd(90) vwd(150) vwd(55);
+		border: vwd(1) solid $blue-link;
+		position: relative;
+
+		@include max(md) {
+			padding: vw(62) vw(34) vw(35) vw(20);
+		}
+	}
+
+	&__slide-title {
+		padding: vwd(28) 0;
+		font-size: vwd(40);
+		line-height: vwd(50);
+		font-weight: 900;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		color: $blue-link;
+		border-top: vwd(2) solid $blue-link;
+		border-bottom: vwd(2) solid $blue-link;
+
+		@include max(md) {
+			padding: vw(10) 0;
+			font-size: vw(15);
+			line-height: vw(19);
+			border-top: vw(1) solid $blue-link;
+			border-bottom: vw(1) solid $blue-link;
+		}
+	}
+
+	&__slide-text {
+		font-size: vwd(24);
+		line-height: vwd(34);
+		color: $blue-link;
+		margin-top: vwd(58);
+
+		@include max(md) {
+			font-size: vw(12);
+			line-height: vw(17);
+			letter-spacing: -0.03em;
+			margin-top: vw(15);
+		}
+
+		p + p {
+			margin-top: vwd(32);
+
+			@include max(md) {
+				margin-top: vw(15);
+			}
+		}
+	}
+
+	&__nav {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-top: vwd(73);
+
+		@include max(md) {
+			margin-top: vw(3);
+		}
+	}
+
+	&__fraction {
+		font-size: vwd(18);
+		line-height: vwd(21);
+		color: $blue-link;
+		margin-right: vwd(10);
+
+		@include max(md) {
+			font-size: vw(14);
+			line-height: vw(17);
+		}
+	}
+
+	&__pagination {
+		display: flex;
+		align-items: center;
+	}
+
+	&__bullet {
+		width: vwd(6);
+		height: vwd(6);
+		border-radius: 50%;
+		background-color: $blue-link;
+
+		@include max(md) {
+			width: vw(5);
+			height: vw(5);
+		}
+
+		+ .lifehack__bullet {
+			margin-left: vwd(4);
+
+			@include max(md) {
+				margin-left: vw(3);
+			}
+		}
+
+		&.swiper-pagination-bullet-active {
+			width: vwd(10);
+			height: vwd(10);
+			background-color: $white;
+			border: vwd(1) solid $blue-link;
+
+			@include max(md) {
+				width: vw(8);
+				height: vw(8);
+			}
+		}
+	}
+
+	.slider-prev,
+	.slider-next {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		cursor: pointer;
+
+		@include max(md) {
+			display: flex;
+			align-items: center;
+			height: vw(15);
+			top: unset;
+			bottom: vw(-18);
+			transform: none;
+		}
+
+		svg {
+			@include max(md) {
+				width: vw(50);
+				height: vw(3);
+			}
+		}
+	}
+
+	.slider-prev {
+		left: vwd(-100);
+		transform: rotate(180deg);
+
+		@include max(md) {
+			left: vw(24);
+		}
+	}
+
+	.slider-next {
+		right: vwd(-100);
+
+		@include max(md) {
+			right: vw(24);
+		}
+	}
+}
