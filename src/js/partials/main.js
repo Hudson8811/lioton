@@ -86,13 +86,24 @@ $(document).ready(function() {
 	});
 
 	/* Кнопка следующего вопроса (результата) */
-	$('.quiz__block--answer .quiz__next').click(function () {
+	$('.quiz__block--answer .quiz__next').on('click', function () {
 		if (curQuestion < countQuestion) {
 			curQuestion++;
 			setQuestion(curQuestion, allQuestions);
 		} else {
 			showResults(points);
 		}
+	});
+
+	/* Скрываем пагинацию на мобильном разрешении на этапе результатов */
+	$('.quiz__block--answer .quiz__next').on('mouseup', function () {
+		setTimeout(function () {
+			if (window.matchMedia('(max-width: 1079px)').matches && $('.quiz__block--result').is(':visible')) {
+				$('.quiz__pagi').hide();
+			} else {
+				$('.quiz__pagi').show();
+			}
+		}, 100)
 	});
 
 	function setQuestion(curQuestion, allQuestions) {
@@ -106,6 +117,7 @@ $(document).ready(function() {
 			title = answer.title,
 			subtitle = answer.subtitle,
 			text = answer.text,
+			note = answer.note,
 			pagi = $('.quiz__pagi');
 
 		questionNum2.text(questionNum.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false}));
@@ -124,6 +136,13 @@ $(document).ready(function() {
 		$('.quiz__answer').html(title);
 		$('.quiz__answer-subtitle').html(subtitle);
 		$('.quiz__answer-text').html(text);
+
+		// Примечание
+		if (note) {
+			$('.quiz__ps').show().html(note);
+		} else {
+			$('.quiz__ps').hide();
+		}
 
 		$('.quiz__block--question').css('display', 'flex');
 		$('.quiz__block--answer').hide();

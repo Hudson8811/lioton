@@ -110,6 +110,7 @@ block main
 					.quiz__answer-text
 						p Отток крови поможет в профилактике проблем с венами.
 						p При возникновении тяжести, отеков, боли в ногах и других тревожных симптомов обязательно посетите врача-флеболога.
+					.quiz__ps * Tisi PV. Varicose veins. BMJ Clin Evid. 2011; 2011:0212. Published 2011, Jan 5.
 					.quiz__arrow.quiz__arrow--next
 						+icon('arrow')(width='7', height='152')
 			button.bubble.quiz__choice.quiz__choice--false.quiz__next
@@ -120,7 +121,9 @@ block main
 			.quiz__main
 				.quiz__bg
 				.quiz__content
-					img(src='images/result.png', alt='')
+					picture
+						source(media="(max-width: 1079px)", srcset='images/flowers.png')
+						img(src='images/result.png', alt='')
 					.quiz__result-points
 						p <span class="your-point">8</span> / 10
 						p <span class="your-point">8</span> правильных ответов из 10!

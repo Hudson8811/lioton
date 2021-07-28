@@ -7,7 +7,7 @@
 	overflow: hidden;
 
 	@include max(md) {
-		padding: vw(77) vw(15) vw(26);
+		padding: vw(77) vw(12) vw(26);
 	}
 
 	&__logo {
@@ -46,6 +46,7 @@
 				position: absolute;
 				pointer-events: none;
 				fill: #77ACD8;
+				opacity: 0.3;
 			}
 
 			.circle-small {
@@ -105,6 +106,20 @@
 						border-radius: vw(17);
 						border: none;
 						transform: none;
+						position: relative;
+					}
+
+					&::after {
+						@include max(md) {
+							content: '';
+							display: block;
+							width: vw(1);
+							height: vw(30);
+							background-color: $white;
+							position: absolute;
+							top: 0;
+							right: vw(-24);
+						}
 					}
 
 					span {
@@ -123,25 +138,6 @@
 					}
 				}
 
-				&__choice--correct {
-					@include max(md) {
-						position: relative;
-					}
-
-					&::after {
-						@include max(md) {
-							content: '';
-							display: block;
-							width: vw(1);
-							height: vw(30);
-							background-color: $white;
-							position: absolute;
-							top: 0;
-							right: vw(-24);
-						}
-					}
-				}
-
 				&__choice--incorrect {
 					display: none;
 
@@ -156,10 +152,10 @@
 				}
 
 				&__content {
-					padding: vwd(135) vwd(100) vwd(233) vwd(132);
+					padding: vwd(135) vwd(100) vwd(155) vwd(132);
 
 					@include max(md) {
-						padding: vw(44) vw(44) vw(30);
+						padding: vw(44) vw(44) vw(100);
 					}
 				}
 				
@@ -214,6 +210,35 @@
 						margin-top: vwd(35);
 					}
 				}
+
+				&__ps {
+					margin-right: vwd(100);
+					border-top: vwd(1) solid $blue-8c;
+					padding-top: vwd(7);
+					font-size: vwd(10);
+					line-height: vwd(15);
+					color: $dark-gray;
+					position: absolute;
+					bottom: vwd(53);
+					left: vwd(132);
+
+					@include max(md) {
+						font-size: vw(7);
+						line-height: vw(10);
+						margin-right: vw(44);
+						bottom: vw(15);
+						left: vw(44);
+					}
+
+					a {
+						color: $dark-gray;
+						text-decoration: underline;
+
+						@include hover {
+							text-decoration: none;
+						}
+					}
+				}
 			}
 		}
 
@@ -224,10 +249,23 @@
 				&__content {
 					padding: vwd(174) vwd(88) vwd(53);
 
-					> img {
+					@include max(md) {
+						padding: vw(72) vw(44);
+					}
+
+					> picture img {
+						width: vwd(268);
+						height: vwd(220);
 						position: absolute;
 						top: vwd(100);
 						right: vwd(24);
+
+						@include max(md) {
+							width: vw(97);
+							height: vw(62);
+							top: vw(47);
+							right: vw(12);
+						}
 					}
 				}
 
@@ -237,18 +275,63 @@
 					height: vwd(227);
 					margin-top: vwd(160);
 
+					@include max(md) {
+						width: auto;
+						height: auto;
+						position: absolute;
+						top: vw(34);
+						left: 50%;
+						transform: translateX(-50%);
+						border: none;
+						margin-top: 0;
+					}
+
 					span {
 						font-size: vwd(45);
 						line-height: vwd(54);
 						margin-left: vwd(25);
 						margin-top: vwd(154);
+
+						@include max(md) {
+							font-size: vw(12);
+							line-height: vw(14);
+							font-weight: 900;
+							transform: none;
+							margin: 0;
+						}
 					}
 				}
 
 				&__choice--lifehack {
+					@include max(md) {
+						margin-top: vw(15);
+					}
+
 					span {
 						margin-left: vwd(9);
 						margin-top: vwd(200);
+
+						@include max(md) {
+							margin-left: vw(-17);
+							margin-top: vw(75);
+						}
+					}
+				}
+
+				&__arrow--next {
+					@include max(md) {
+						display: block;
+						top: unset;
+						right: 56%;
+						transform: rotate(90deg);
+						bottom: vw(-84);
+					}
+
+					svg {
+						@include max(md) {
+							width: vw(2);
+							height: vw(82);
+						}
 					}
 				}
 
@@ -262,12 +345,21 @@
 					background-color: $blue-link;
 					color: $white;
 
+					@include max(md) {
+						height: vw(133);
+					}
+
 					p {
 						&:first-child {
 							font-size: vwd(64);
 							line-height: vwd(61);
 							font-weight: 900;
 							letter-spacing: -0.035em;
+
+							@include max(md) {
+								font-size: vw(30);
+								line-height: vw(31);
+							}
 
 							.your-point {
 								color: $pink;
@@ -279,6 +371,12 @@
 							line-height: vwd(28);
 							font-weight: 300;
 							margin-top: vwd(30);
+
+							@include max(md) {
+								font-size: vw(12);
+								line-height: vw(14);
+								margin-top: vw(10);
+							}
 						}
 					}
 				}
@@ -291,6 +389,13 @@
 					color: $blue-link;
 					text-align: center;
 					margin-top: vwd(38);
+
+					@include max(md) {
+						font-size: vw(24);
+						line-height: vw(26);
+						letter-spacing: 0.02em;
+						margin-top: vw(18);
+					}
 				}
 
 				&__result-text {
@@ -300,12 +405,23 @@
 					color: $blue-link;
 					text-align: center;
 					margin-top: vwd(34);
+
+					@include max(md) {
+						font-size: vw(12);
+						line-height: vw(18);
+						letter-spacing: -0.03em;
+						margin-top: vw(10);
+					}
 				}
 
 				&__result-socials {
 					margin-top: vwd(111);
 					display: flex;
 					justify-content: center;
+
+					@include max(md) {
+						display: none;
+					}
 
 					a {
 						svg {
