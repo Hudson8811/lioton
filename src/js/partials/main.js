@@ -213,9 +213,9 @@ $(document).ready(function() {
 			if (distance > 1 && (direction == 'left' || direction == 'right')) {
 				var position;
 
-				if (direction == 'left'){
+				if (direction == 'right'){
 					position = 'false';
-				} else if(direction == 'right') {
+				} else if(direction == 'left') {
 					position = 'true';
 				}
 
@@ -246,8 +246,8 @@ $(document).ready(function() {
 
 	$('.quiz__block--answer .quiz__main').swipe({
 		swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
-			if (distance > 1 && direction == 'left') {
-				if (direction == 'left'){
+			if (distance > 1 && direction == 'right') {
+				if (direction == 'right'){
 					if (curQuestion < countQuestion) {
 						curQuestion++;
 						setQuestion(curQuestion, allQuestions);

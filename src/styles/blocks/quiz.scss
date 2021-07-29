@@ -92,6 +92,7 @@
 					width: vwd(115);
 					height: vwd(227);
 					margin-top: vwd(120);
+					margin-right: vwd(50);
 
 					@include max(md) {
 						display: flex;
@@ -274,6 +275,7 @@
 					width: vwd(115);
 					height: vwd(227);
 					margin-top: vwd(160);
+					margin-right: vwd(50);
 
 					@include max(md) {
 						width: auto;
@@ -558,6 +560,7 @@
 
 	&__content {
 		width: vwd(719);
+		height: vwd(907);
 		padding: vwd(117) vwd(105) vwd(171);
 		border: vwd(9) solid $blue-link;
 		border-radius: vwd(23);
@@ -567,6 +570,7 @@
 
 		@include max(md) {
 			width: 100%;
+			height: vw(400);
 			padding: vw(48) vw(40) vw(61);
 			border-width: vw(4);
 			border-radius: vw(9);
