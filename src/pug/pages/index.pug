@@ -73,26 +73,49 @@ block main
 				+icon('logo')
 		.quiz__question-num-outer –– <span class="current">01</span>
 		.quiz__block.quiz__block--question
-			button.bubble.quiz__choice.quiz__choice--true(data-correct='true')
+			.bubble.quiz__choice.quiz__choice--correct.quiz__sides.quiz__sides--answer.hide
+				span Верно!
+			.bubble.quiz__choice.quiz__choice--incorrect.quiz__sides.quiz__sides--answer.hide
+				span Неверно!
+			button.bubble.quiz__choice.quiz__choice--true.quiz__sides.quiz__sides--quest(data-correct='true')
 				span Полезно
 			.quiz__main
-				.quiz__arrow
+				.quiz__arrow.quiz__sides.quiz__sides--quest
 					+icon('arrow')(width='7', height='152')
 				.quiz__bg
-				.quiz__content
-					.quiz__step
-						span.current I
-						span /
-						span.all X
-					.quiz__image
-						img(src='images/quiz/1.jpg', alt='')
-					.quiz__qiestion-num Вопрос <span class="quest-digit">1</span>
-					.quiz__qiestion Необходимо ли двигаться и больше гулять для предотвращения варикоза?
+				.quiz__cards
+					.quiz__content.quiz__content--quest.front
+						.quiz__step.quiz__step--quest
+							span.current I
+							span /
+							span.all X
+						.quiz__image
+							img(src='images/quiz/1.jpg', alt='')
+						.quiz__qiestion-num Вопрос <span class="quest-digit">1</span>
+						.quiz__qiestion Необходимо ли двигаться и больше гулять для предотвращения варикоза?
+
+					.quiz__content.quiz__content--answer.blur
+						+icon('circle-small')(class='circle-small', width='93', height='185')
+						+icon('circle-big')(class='circle-big', width='224', height='447')
+						.quiz__step.quiz__step--answer
+							span.current VI
+							span /
+							span.all X
+						.quiz__answer Это полезно!
+						.quiz__answer-subtitle Поднимать ноги и упирать их в стенку можно не только вечером.
+						.quiz__answer-text
+							p Отток крови поможет в профилактике проблем с венами.
+							p При возникновении тяжести, отеков, боли в ногах и других тревожных симптомов обязательно посетите врача-флеболога.
+						.quiz__ps * Tisi PV. Varicose veins. BMJ Clin Evid. 2011; 2011:0212. Published 2011, Jan 5.
+
 				.quiz__arrow.quiz__arrow--next
 					+icon('arrow')(width='7', height='152')
-			button.bubble.quiz__choice.quiz__choice--false(data-correct='false')
+			button.bubble.quiz__choice.quiz__choice--false.quiz__sides.quiz__sides--quest(data-correct='false')
 				span Вредно
-		.quiz__block.quiz__block--answer
+			button.bubble.quiz__choice.quiz__choice--false.quiz__next.quiz__sides.quiz__sides--answer.hide
+				span Далее
+
+		//-.quiz__block.quiz__block--answer
 			.bubble.quiz__choice.quiz__choice--correct
 				span Верно!
 			.bubble.quiz__choice.quiz__choice--incorrect

@@ -53,7 +53,7 @@ function scripts() {
 		.pipe(rigger())
 		.pipe(sourcemaps.init())
 		.pipe(concat('main.min.js'))
-		.pipe(uglify())
+		//.pipe(uglify())
 		.pipe(sourcemaps.write('./maps'))
 		.pipe(dest('build/js/'))
 		.pipe(browserSync.stream())

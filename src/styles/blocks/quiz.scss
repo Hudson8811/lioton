@@ -38,9 +38,7 @@
 			flex-wrap: wrap;
 		}
 
-		&--answer {
-			display: none;
-
+		&--question {
 			.circle-small,
 			.circle-big {
 				position: absolute;
@@ -248,6 +246,7 @@
 
 			#{$self} {
 				&__content {
+					position: relative;
 					padding: vwd(174) vwd(88) vwd(53);
 
 					@include max(md) {
@@ -558,6 +557,17 @@
 		}
 	}
 
+	&__cards{
+		position: relative;
+		width: vwd(719);
+		height: vwd(1100);
+		@include max(md) {
+			width: 100%;
+			height: vw(550);
+		}
+
+	}
+
 	&__content {
 		width: vwd(719);
 		height: vwd(1100);
@@ -565,12 +575,14 @@
 		border: vwd(9) solid $blue-link;
 		border-radius: vwd(23);
 		background-color: $white;
-		position: relative;
-		transition: transform 1s ease, opacity 1s ease;
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 1;
 
 		@include max(md) {
 			width: 100%;
-			height: vw(600);
+			height: vw(550);
 			padding: vw(48) vw(40) vw(61);
 			border-width: vw(4);
 			border-radius: vw(9);
@@ -580,8 +592,27 @@
 			animation: move-left-right 1s ease;
 		}
 
-		&.shift {
-			animation: shift 1s ease;
+		&:not(.front){
+			pointer-events: none;
+		}
+		&.front{
+			z-index: 2;
+		}
+		&--answer{
+			> *{
+				transition: opacity 0.7s linear;
+			}
+			&.blur{
+				> * {
+					opacity: 0;
+				}
+			}
+		}
+	}
+
+	&__sides{
+		&.hide{
+			display: none !important;
 		}
 	}
 

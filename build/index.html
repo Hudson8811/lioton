@@ -89,48 +89,39 @@
             </svg></a></div>
         <div class="quiz__question-num-outer">–– <span class="current">01</span></div>
         <div class="quiz__block quiz__block--question">
-          <button class="bubble quiz__choice quiz__choice--true" data-correct="true"><span>Полезно</span></button>
+          <div class="bubble quiz__choice quiz__choice--correct quiz__sides quiz__sides--answer hide"><span>Верно!</span></div>
+          <div class="bubble quiz__choice quiz__choice--incorrect quiz__sides quiz__sides--answer hide"><span>Неверно!</span></div>
+          <button class="bubble quiz__choice quiz__choice--true quiz__sides quiz__sides--quest" data-correct="true"><span>Полезно</span></button>
           <div class="quiz__main">
-            <div class="quiz__arrow">
+            <div class="quiz__arrow quiz__sides quiz__sides--quest">
               <svg width="7" height="152">
                 <use xlink:href="./images/sprite.svg#arrow"></use>
               </svg>
             </div>
             <div class="quiz__bg"></div>
-            <div class="quiz__content">
-              <div class="quiz__step"><span class="current">I</span><span>/</span><span class="all">X</span></div>
-              <div class="quiz__image"><img src="images/quiz/1.jpg" alt=""></div>
-              <div class="quiz__qiestion-num">Вопрос <span class="quest-digit">1</span></div>
-              <div class="quiz__qiestion">Необходимо ли двигаться и больше гулять для предотвращения варикоза?</div>
-            </div>
-            <div class="quiz__arrow quiz__arrow--next">
-              <svg width="7" height="152">
-                <use xlink:href="./images/sprite.svg#arrow"></use>
-              </svg>
-            </div>
-          </div>
-          <button class="bubble quiz__choice quiz__choice--false" data-correct="false"><span>Вредно</span></button>
-        </div>
-        <div class="quiz__block quiz__block--answer">
-          <div class="bubble quiz__choice quiz__choice--correct"><span>Верно!</span></div>
-          <div class="bubble quiz__choice quiz__choice--incorrect"><span>Неверно!</span></div>
-          <div class="quiz__main">
-            <div class="quiz__bg"></div>
-            <div class="quiz__content">
-              <svg class="circle-small" width="93" height="185">
-                <use xlink:href="./images/sprite.svg#circle-small"></use>
-              </svg>
-              <svg class="circle-big" width="224" height="447">
-                <use xlink:href="./images/sprite.svg#circle-big"></use>
-              </svg>
-              <div class="quiz__step"><span class="current">VI</span><span>/</span><span class="all">X</span></div>
-              <div class="quiz__answer">Это полезно!</div>
-              <div class="quiz__answer-subtitle">Поднимать ноги и упирать их в стенку можно не только вечером.</div>
-              <div class="quiz__answer-text">
-                <p>Отток крови поможет в профилактике проблем с венами.</p>
-                <p>При возникновении тяжести, отеков, боли в ногах и других тревожных симптомов обязательно посетите врача-флеболога.</p>
+            <div class="quiz__cards">
+              <div class="quiz__content quiz__content--quest front">
+                <div class="quiz__step quiz__step--quest"><span class="current">I</span><span>/</span><span class="all">X</span></div>
+                <div class="quiz__image"><img src="images/quiz/1.jpg" alt=""></div>
+                <div class="quiz__qiestion-num">Вопрос <span class="quest-digit">1</span></div>
+                <div class="quiz__qiestion">Необходимо ли двигаться и больше гулять для предотвращения варикоза?</div>
               </div>
-              <div class="quiz__ps">* Tisi PV. Varicose veins. BMJ Clin Evid. 2011; 2011:0212. Published 2011, Jan 5.</div>
+              <div class="quiz__content quiz__content--answer blur">
+                <svg class="circle-small" width="93" height="185">
+                  <use xlink:href="./images/sprite.svg#circle-small"></use>
+                </svg>
+                <svg class="circle-big" width="224" height="447">
+                  <use xlink:href="./images/sprite.svg#circle-big"></use>
+                </svg>
+                <div class="quiz__step quiz__step--answer"><span class="current">VI</span><span>/</span><span class="all">X</span></div>
+                <div class="quiz__answer">Это полезно!</div>
+                <div class="quiz__answer-subtitle">Поднимать ноги и упирать их в стенку можно не только вечером.</div>
+                <div class="quiz__answer-text">
+                  <p>Отток крови поможет в профилактике проблем с венами.</p>
+                  <p>При возникновении тяжести, отеков, боли в ногах и других тревожных симптомов обязательно посетите врача-флеболога.</p>
+                </div>
+                <div class="quiz__ps">* Tisi PV. Varicose veins. BMJ Clin Evid. 2011; 2011:0212. Published 2011, Jan 5.</div>
+              </div>
             </div>
             <div class="quiz__arrow quiz__arrow--next">
               <svg width="7" height="152">
@@ -138,7 +129,8 @@
               </svg>
             </div>
           </div>
-          <button class="bubble quiz__choice quiz__choice--false quiz__next"><span>Далее</span></button>
+          <button class="bubble quiz__choice quiz__choice--false quiz__sides quiz__sides--quest" data-correct="false"><span>Вредно</span></button>
+          <button class="bubble quiz__choice quiz__choice--false quiz__next quiz__sides quiz__sides--answer hide"><span>Далее</span></button>
         </div>
         <div class="quiz__block quiz__block--result">
           <div class="bubble quiz__choice quiz__choice--result"><span>Отлично!</span></div>

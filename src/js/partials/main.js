@@ -183,9 +183,11 @@ $(document).ready(function() {
 		if (windowTop + windowHeight >= elemTop || windowTop + windowHeight == docHeight || elemHeight + elemTop < windowHeight) {
 			blockVisible = true;
 
-			$('.quiz__block--question .quiz__content').addClass('swipe');
+			$('.quiz__content--quest').addClass('swipe');
 		}
 	}
+
+
 
 	/* Квиз */
 	curQuestion = 0;
@@ -208,18 +210,20 @@ $(document).ready(function() {
 	});
 
 	/* Свайп */
-	$('.quiz__block--question .quiz__main').swipe({
+	$('.quiz__content--quest').swipe({
 		swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
-			if (distance > 1 && (direction == 'left' || direction == 'right')) {
+			if (distance > 50 && (direction == 'left' || direction == 'right')) {
 				var position;
 
 				if (direction == 'right'){
 					position = 'false';
 				} else if(direction == 'left') {
 					position = 'true';
-				}
 
-				if (allQuestions.test[curQuestion-1].correct === position) {
+				}
+				slideQuest(direction);
+
+				if (allQuestions.test[curQuestion-1].correct === 'true') {
 					points++;
 					$('.quiz__choice--correct').show();
 					$('.quiz__choice--incorrect').hide();
@@ -228,25 +232,20 @@ $(document).ready(function() {
 					$('.quiz__choice--incorrect').show();
 				}
 
-				$('.quiz__block--question').hide();
-				$('.quiz__block--answer').css('display', 'flex');
-
-				/* Анимация сдвига слайда */
-				$('.quiz__block--answer .quiz__content').addClass('shift');
-				$('.quiz__block--question .quiz__content').removeClass('shift');
-
-				/* Отключаем анимацию показа свайпа */
-				if ($('.quiz__content').hasClass('swipe')) {
-					$('.quiz__content').removeClass('swipe');
+				if (allQuestions.test[curQuestion-1].correct === 'false') {
+					$('.circle-small, .circle-big').css('fill', '#E5539B');
+				} else {
+					$('.circle-small, .circle-big').css('fill', '#77ACD8');
 				}
+
 			}
 		},
 		threshold:0
 	});
 
-	$('.quiz__block--answer .quiz__main').swipe({
+	$('.quiz__content--answer').swipe({
 		swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
-			if (distance > 1 && direction == 'right') {
+			if (distance > 50 && direction == 'right') {
 				if (direction == 'right'){
 					if (curQuestion < countQuestion) {
 						curQuestion++;
@@ -259,24 +258,53 @@ $(document).ready(function() {
 								$('.quiz__pagi').show();
 							}
 						}, 100);
-
 						showResults(points);
 					}
-				}
 
-				/* Анимация сдвига слайда */
-				$('.quiz__block--answer .quiz__content').removeClass('shift');
-				$('.quiz__block--question .quiz__content').addClass('shift');
+					slideAnswer(direction);
+				}
 			}
 		},
 		threshold:0
 	});
 
+	function slideQuest(direction){
+		$('.quiz__content').removeClass('swipe');
+		let shift = "+=100";
+		if (direction === 'left') shift = "-=100";
+		$('.quiz__content--answer').removeClass('blur');
+		$('.quiz__content--quest').animate({
+			opacity : 0,
+			left : shift
+		},500,function (){
+			$('.quiz__content--quest').removeClass('front').removeAttr('style');
+			$('.quiz__content--answer').addClass('front');
+		});
+		$('.quiz__sides--answer').removeClass('hide');
+		$('.quiz__sides--quest').addClass('hide');
+	}
+
+	function slideAnswer(direction){
+		$('.quiz__content').removeClass('swipe');
+		let shift = "+=100";
+		if (direction === 'left') shift = "-=100";
+		$('.quiz__content--answer').animate({
+			opacity : 0,
+			left : shift
+		},500,function (){
+			$('.quiz__content--answer').removeClass('front').removeAttr('style').addClass('blur');
+			$('.quiz__content--quest').addClass('front');
+		});
+		$('.quiz__sides--answer').addClass('hide');
+		$('.quiz__sides--quest').removeClass('hide');
+	}
+
+
 	/* Кнопки выбора */
-	$('.quiz__block--question .quiz__choice').click(function () {
+	$('.quiz__choice--true.quiz__sides--quest,.quiz__choice--false.quiz__sides--quest').click(function () {
 		var choise = $(this).attr('data-correct');
 
-		if (allQuestions.test[curQuestion-1].correct === choise) {
+		if (allQuestions.test[curQuestion-1].correct === 'true') {
 			points++;
 			$('.quiz__choice--correct').show();
 			$('.quiz__choice--incorrect').hide();
@@ -292,35 +320,27 @@ $(document).ready(function() {
 			$('.circle-small, .circle-big').css('fill', '#77ACD8');
 		}
 
-		$('.quiz__block--question').hide();
-		$('.quiz__block--answer').css('display', 'flex');
-
-		/* Отключаем анимацию показа свайпа */
-		if ($('.quiz__content').hasClass('swipe')) {
-			$('.quiz__content').removeClass('swipe');
+		let direction = 'right';
+		if (choise === 'true'){
+			direction = 'left';
 		}
 
-		/* Анимация сдвига слайда */
-		$('.quiz__block--answer .quiz__content').addClass('shift');
-		$('.quiz__block--question .quiz__content').addClass('shift');
+		slideQuest(direction);
 	});
 
 	/* Кнопка следующего вопроса (результата) */
-	$('.quiz__block--answer .quiz__next').on('click', function () {
+	$('.quiz__next.quiz__sides--answer').on('click', function () {
 		if (curQuestion < countQuestion) {
 			curQuestion++;
 			setQuestion(curQuestion, allQuestions);
 		} else {
 			showResults(points);
 		}
-
-		/* Анимация сдвига слайда */
-		$('.quiz__block--answer .quiz__content').addClass('shift');
-		$('.quiz__block--question .quiz__content').removeClass('shift');
+		slideAnswer('right');
 	});
 
 	/* Скрываем пагинацию на мобильном разрешении на этапе результатов */
-	$('.quiz__block--answer .quiz__next').on('mouseup', function () {
+	$('.quiz__next.quiz__sides--answer').on('mouseup', function () {
 		setTimeout(function () {
 			if (window.matchMedia('(max-width: 1079px)').matches && $('.quiz__block--result').is(':visible')) {
 				$('.quiz__pagi').hide();
@@ -352,24 +372,24 @@ $(document).ready(function() {
 		// Смена активного булита
 		$('.quiz__dots p.active').removeClass('active').next().addClass('active');
 
-
+		$('.quiz__step--quest .current').html(num);
 		$('.quiz__qiestion-num .quest-digit').html(questionNum);
 		$('.quiz__image img').attr('src', img);
 		$('.quiz__qiestion').html(question);
-		$('.quiz__step .current').html(num);
-		$('.quiz__answer').html(title);
-		$('.quiz__answer-subtitle').html(subtitle);
-		$('.quiz__answer-text').html(text);
 
-		// Примечание
-		if (note) {
-			$('.quiz__ps').show().html(note);
-		} else {
-			$('.quiz__ps').hide();
-		}
+		setTimeout(function (){
+			$('.quiz__step--answer .current').html(num);
+			$('.quiz__answer').html(title);
+			$('.quiz__answer-subtitle').html(subtitle);
+			$('.quiz__answer-text').html(text);
 
-		$('.quiz__block--question').css('display', 'flex');
-		$('.quiz__block--answer').hide();
+			// Примечание
+			if (note) {
+				$('.quiz__ps').show().html(note);
+			} else {
+				$('.quiz__ps').hide();
+			}
+		},600);
 	}
 
 	function mixArray(arr) {
@@ -398,7 +418,7 @@ $(document).ready(function() {
 
 			$('.quiz__result-points .your-point').text(points);
 			$('.quiz__block--result').css('display', 'flex');
-			$('.quiz__block--answer').hide();
+			$('.quiz__block--question').hide();
 		})
 	}
 
