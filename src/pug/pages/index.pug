@@ -38,33 +38,34 @@ block main
 				a.socials__item(target="_blank" class='fb' href='javascript:;' data-id='share_fb' data-mode="nohash")
 					+icon('fb')(width='31', height='31')
 		.first-screen__right
-			img(src='images/legs.png', alt='')
+			img.wow.slideInRight(src='images/legs.png', alt='')
 			.first-screen__content
-				a.first-screen__site(href='www.lioton-gel.ru', target='_blank') www.lioton-gel.ru
-				.brand.first-screen__brand
+				a.first-screen__site.wow.slideInRight(href='www.lioton-gel.ru', target='_blank') www.lioton-gel.ru
+				.brand.first-screen__brand.wow.slideInRight
 					p Гепарин натрий
 					p Лиотон<sup>&reg;</sup><span>&ndash;</span>
 					p для здоровья <br> и красоты <br> Ваших ног!
 				.first-screen__notice имеются противопоказания, ознакомьтесь с инструкцией.
 
-	section.advertising
-		.advertising__content
-			.advertising__top
-				.brand.advertising__brand
-					p Гепарин натрий
-					p Лиотон<sup>&reg;</sup>
-				.advertising__title Для здоровья и красоты Ваших ног!
-			.advertising__row
-				img(src='images/cream.png', alt='')
-				.advertising__middle-text
-					p Отеки, тяжесть, боль в ногах?
-					p Своевременно позаботьтесь о Ваших <br> ножках – вместе с гелем Лиотон<sup>&reg;</sup>!*
-			.advertising__bottom
-				p *показан при заболеваниях поверхностных вен
-				p.big имеются противопоказания, ознакомьтесь с инструкцией.
-				p ООО «Берлин-Хеми/А. Менарини», 123317, г. Москва, Пресненская набережная, д. 10, БЦ «Башня на набережной», Блок Б.
-		.advertising__image
-			img(src='images/woman.jpg', alt='')
+	a.advertising.wow.fadeInUp(href='http://pubads.g.doubleclick.net/gampad/clk?id=5743162707&iu=/81006599/hmiru-wday/counter', target='_blank')
+		figure
+			.advertising__content
+				.advertising__top
+					.brand.advertising__brand
+						p Гепарин натрий
+						p Лиотон<sup>&reg;</sup>
+					.advertising__title Для здоровья и красоты Ваших ног!
+				.advertising__row
+					img(src='images/cream.png', alt='')
+					.advertising__middle-text
+						p Отеки, тяжесть, боль в ногах?
+						p Своевременно позаботьтесь о Ваших <br> ножках – вместе с гелем Лиотон<sup>&reg;</sup>!*
+				.advertising__bottom
+					p *показан при заболеваниях поверхностных вен
+					p.big имеются противопоказания, ознакомьтесь с инструкцией.
+					p ООО «Берлин-Хеми/А. Менарини», 123317, г. Москва, Пресненская набережная, д. 10, БЦ «Башня на набережной», Блок Б.
+			.advertising__image
+				img(src='images/woman.jpg', alt='')
 
 	section#quiz.quiz
 		.logo.quiz__logo
@@ -157,24 +158,25 @@ block main
 				+icon('fb')(width='31', height='31')
 
 
-	section.advertising.advertising--mobile
-		.advertising__content
-			.advertising__top
-				.brand.advertising__brand
-					p Гепарин натрий
-					p Лиотон<sup>&reg;</sup>
-				.advertising__title Для здоровья и красоты Ваших ног!
-			.advertising__row
-				img(src='images/cream.png', alt='')
-				.advertising__middle-text
-					p Отеки, тяжесть, боль в ногах?
-					p Своевременно позаботьтесь о Ваших <br> ножках – вместе с гелем Лиотон<sup>&reg;</sup>!*
-			.advertising__bottom
-				p *показан при заболеваниях поверхностных вен
-				p.big имеются противопоказания, ознакомьтесь с инструкцией.
-				p ООО «Берлин-Хеми/А. Менарини», 123317, г. Москва, Пресненская набережная, д. 10, БЦ «Башня на набережной», Блок Б.
-		.advertising__image
-			img(src='images/woman.jpg', alt='')
+	a.advertising.advertising--mobile(href='http://pubads.g.doubleclick.net/gampad/clk?id=5743162707&iu=/81006599/hmiru-wday/counter', target='_blank')
+		figure
+			.advertising__content
+				.advertising__top
+					.brand.advertising__brand
+						p Гепарин натрий
+						p Лиотон<sup>&reg;</sup>
+					.advertising__title Для здоровья и красоты Ваших ног!
+				.advertising__row
+					img(src='images/cream.png', alt='')
+					.advertising__middle-text
+						p Отеки, тяжесть, боль в ногах?
+						p Своевременно позаботьтесь о Ваших <br> ножках – вместе с гелем Лиотон<sup>&reg;</sup>!*
+				.advertising__bottom
+					p *показан при заболеваниях поверхностных вен
+					p.big имеются противопоказания, ознакомьтесь с инструкцией.
+					p ООО «Берлин-Хеми/А. Менарини», 123317, г. Москва, Пресненская набережная, д. 10, БЦ «Башня на набережной», Блок Б.
+			.advertising__image
+				img(src='images/woman.jpg', alt='')
 
 	section#lifehack.lifehack
 		.lifehack__left
@@ -254,23 +256,24 @@ block main
 				.lifehack__fraction <span class="current">1</span> / 10
 				.lifehack__pagination
 		.lifehack__right
-			.banner
-				.banner__top
-					img(src='images/manufacturer.png', alt='')
-					.banner__top-image
-						img(src='images/cream.png', alt='')
-					.banner__text Способствует <br class="mbr"> уменьшению:
-						ul
-							li отеков
-							li усталости,
-							li тяжести в ногах
-					.banner__ps *показан при заболеваниях поверхностных вен
-					.banner__contacts 123317, г. Москва, Пресненская набережная, д. 10, БЦ “Башня на набережной” , Блок Б. Отпускается
-						|  без рецепта. RU-LIO-10-2018, утв. 12.2018
-				.banner__bottom
-					.brand.banner__brand
-						p Гепарин натрий
-						p Лиотон<sup>&reg;</sup>
-					.banner__image
-						img(src='images/legs-2.jpg', alt='')
-						.banner__notice имеются противопоказания, ознакомьтесь с инструкцией.
+			a.banner(href='http://pubads.g.doubleclick.net/gampad/clk?id=5743162707&iu=/81006599/hmiru-wday/counter', target='_blank')
+				figure
+					.banner__top
+						img(src='images/manufacturer.png', alt='')
+						.banner__top-image
+							img(src='images/cream.png', alt='')
+						.banner__text Способствует <br class="mbr"> уменьшению:
+							ul
+								li отеков
+								li усталости,
+								li тяжести в ногах
+						.banner__ps *показан при заболеваниях поверхностных вен
+						.banner__contacts 123317, г. Москва, Пресненская набережная, д. 10, БЦ “Башня на набережной” , Блок Б. Отпускается
+							|  без рецепта. RU-LIO-10-2018, утв. 12.2018
+					.banner__bottom
+						.brand.banner__brand
+							p Гепарин натрий
+							p Лиотон<sup>&reg;</sup>
+						.banner__image
+							img(src='images/legs-2.jpg', alt='')
+							.banner__notice имеются противопоказания, ознакомьтесь с инструкцией.

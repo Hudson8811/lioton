@@ -1,4 +1,8 @@
 $(document).ready(function() {
+	if (window.matchMedia('(min-width: 1080px)').matches) {
+		new WOW().init();
+	}
+
 	$('a.anchor').click(function(e) {
 		e.preventDefault();
 		$('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top }, 500);
@@ -199,6 +203,30 @@ $(document).ready(function() {
 
 				$('.quiz__block--question').hide();
 				$('.quiz__block--answer').css('display', 'flex');
+			}
+		},
+		threshold:0
+	});
+
+	$('.quiz__block--answer .quiz__main').swipe({
+		swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+			if (distance > 1 && direction == 'left') {
+				if (direction == 'left'){
+					if (curQuestion < countQuestion) {
+						curQuestion++;
+						setQuestion(curQuestion, allQuestions);
+					} else {
+						setTimeout(function () {
+							if (window.matchMedia('(max-width: 1079px)').matches && $('.quiz__block--result').is(':visible')) {
+								$('.quiz__pagi').hide();
+							} else {
+								$('.quiz__pagi').show();
+							}
+						}, 100);
+
+						showResults(points);
+					}
+				}
 			}
 		},
 		threshold:0

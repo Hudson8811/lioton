@@ -1,11 +1,18 @@
 .advertising {
-	display: flex;
+	display: block;
 	background: linear-gradient(95.68deg, rgba(0, 92, 163, 0.72) 1.58%, rgba(255, 255, 255, 0) 44.31%);
 
 	@include max(md) {
 		display: none;
-		flex-direction: column;
 		background: none;
+	}
+
+	figure {
+		display: flex;
+
+		@include max(md) {
+			flex-direction: column;
+		}
 	}
 
 	&__image {
