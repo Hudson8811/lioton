@@ -563,12 +563,21 @@
 		border-radius: vwd(23);
 		background-color: $white;
 		position: relative;
+		transition: transform 1s ease, opacity 1s ease;
 
 		@include max(md) {
 			width: 100%;
 			padding: vw(48) vw(40) vw(61);
 			border-width: vw(4);
 			border-radius: vw(9);
+		}
+
+		&.swipe {
+			animation: move-left-right 1s ease;
+		}
+
+		&.shift {
+			animation: shift 1s ease;
 		}
 	}
 

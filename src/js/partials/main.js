@@ -160,6 +160,33 @@ $(document).ready(function() {
 
 
 
+	/* Анимация присутствия свайпа на элементе */
+	$(window).scroll(function () {
+		checkScrollElem();
+	});
+
+	checkScrollElem();
+
+	var blockVisible = false;
+
+	function checkScrollElem() {
+		if (blockVisible) {
+			return false;
+		}
+
+		var windowTop = $(this).scrollTop(),
+			windowHeight = $(this).height(),
+			elemTop = $('.quiz__block').offset().top + 300,
+			elemHeight = $('.quiz__block').outerHeight(),
+			docHeight = $(document).height();
+
+		if (windowTop + windowHeight >= elemTop || windowTop + windowHeight == docHeight || elemHeight + elemTop < windowHeight) {
+			blockVisible = true;
+
+			$('.quiz__block--question .quiz__content').addClass('swipe');
+		}
+	}
+
 	/* Квиз */
 	curQuestion = 0;
 	countQuestion = 1;
@@ -203,6 +230,15 @@ $(document).ready(function() {
 
 				$('.quiz__block--question').hide();
 				$('.quiz__block--answer').css('display', 'flex');
+
+				/* Анимация сдвига слайда */
+				$('.quiz__block--answer .quiz__content').addClass('shift');
+				$('.quiz__block--question .quiz__content').removeClass('shift');
+
+				/* Отключаем анимацию показа свайпа */
+				if ($('.quiz__content').hasClass('swipe')) {
+					$('.quiz__content').removeClass('swipe');
+				}
 			}
 		},
 		threshold:0
@@ -227,6 +263,10 @@ $(document).ready(function() {
 						showResults(points);
 					}
 				}
+
+				/* Анимация сдвига слайда */
+				$('.quiz__block--answer .quiz__content').removeClass('shift');
+				$('.quiz__block--question .quiz__content').addClass('shift');
 			}
 		},
 		threshold:0
@@ -254,6 +294,15 @@ $(document).ready(function() {
 
 		$('.quiz__block--question').hide();
 		$('.quiz__block--answer').css('display', 'flex');
+
+		/* Отключаем анимацию показа свайпа */
+		if ($('.quiz__content').hasClass('swipe')) {
+			$('.quiz__content').removeClass('swipe');
+		}
+
+		/* Анимация сдвига слайда */
+		$('.quiz__block--answer .quiz__content').addClass('shift');
+		$('.quiz__block--question .quiz__content').addClass('shift');
 	});
 
 	/* Кнопка следующего вопроса (результата) */
@@ -264,6 +313,10 @@ $(document).ready(function() {
 		} else {
 			showResults(points);
 		}
+
+		/* Анимация сдвига слайда */
+		$('.quiz__block--answer .quiz__content').addClass('shift');
+		$('.quiz__block--question .quiz__content').removeClass('shift');
 	});
 
 	/* Скрываем пагинацию на мобильном разрешении на этапе результатов */

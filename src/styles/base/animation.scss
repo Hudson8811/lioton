@@ -1,0 +1,29 @@
+@keyframes move-left-right {
+	0% {
+		transform: translateX(0);
+	}
+
+	33% {
+		transform: translateX(10px);
+	}
+
+	66% {
+		transform: translateX(-10px);
+	}
+
+	100% {
+		transform: translateX(0);
+	}
+}
+
+@keyframes shift {
+	0% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+
+	100% {
+		transform: translateX(-40px);
+		opacity: 0;
+	}
+}

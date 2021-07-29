@@ -76,10 +76,10 @@ block main
 			button.bubble.quiz__choice.quiz__choice--true(data-correct='true')
 				span Полезно
 			.quiz__main
+				.quiz__arrow
+					+icon('arrow')(width='7', height='152')
 				.quiz__bg
 				.quiz__content
-					.quiz__arrow
-						+icon('arrow')(width='7', height='152')
 					.quiz__step
 						span.current I
 						span /
@@ -88,8 +88,8 @@ block main
 						img(src='images/quiz/1.jpg', alt='')
 					.quiz__qiestion-num Вопрос <span class="quest-digit">1</span>
 					.quiz__qiestion Необходимо ли двигаться и больше гулять для предотвращения варикоза?
-					.quiz__arrow.quiz__arrow--next
-						+icon('arrow')(width='7', height='152')
+				.quiz__arrow.quiz__arrow--next
+					+icon('arrow')(width='7', height='152')
 			button.bubble.quiz__choice.quiz__choice--false(data-correct='false')
 				span Вредно
 		.quiz__block.quiz__block--answer
@@ -112,8 +112,8 @@ block main
 						p Отток крови поможет в профилактике проблем с венами.
 						p При возникновении тяжести, отеков, боли в ногах и других тревожных симптомов обязательно посетите врача-флеболога.
 					.quiz__ps * Tisi PV. Varicose veins. BMJ Clin Evid. 2011; 2011:0212. Published 2011, Jan 5.
-					.quiz__arrow.quiz__arrow--next
-						+icon('arrow')(width='7', height='152')
+				.quiz__arrow.quiz__arrow--next
+					+icon('arrow')(width='7', height='152')
 			button.bubble.quiz__choice.quiz__choice--false.quiz__next
 				span Далее
 		.quiz__block.quiz__block--result
