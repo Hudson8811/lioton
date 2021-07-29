@@ -85,28 +85,30 @@ block main
 				.quiz__bg
 				.quiz__cards
 					.quiz__content.quiz__content--quest.front
-						.quiz__step.quiz__step--quest
-							span.current I
-							span /
-							span.all X
-						.quiz__image
-							img(src='images/quiz/1.jpg', alt='')
-						.quiz__qiestion-num Вопрос <span class="quest-digit">1</span>
-						.quiz__qiestion Необходимо ли двигаться и больше гулять для предотвращения варикоза?
+						.quiz__inner
+							.quiz__step.quiz__step--quest
+								span.current I
+								span /
+								span.all X
+							.quiz__image
+								img(src='images/quiz/1.jpg', alt='')
+							.quiz__qiestion-num Вопрос <span class="quest-digit">1</span>
+							.quiz__qiestion Необходимо ли двигаться и больше гулять для предотвращения варикоза?
 
 					.quiz__content.quiz__content--answer.blur
-						+icon('circle-small')(class='circle-small', width='93', height='185')
-						+icon('circle-big')(class='circle-big', width='224', height='447')
-						.quiz__step.quiz__step--answer
-							span.current VI
-							span /
-							span.all X
-						.quiz__answer Это полезно!
-						.quiz__answer-subtitle Поднимать ноги и упирать их в стенку можно не только вечером.
-						.quiz__answer-text
-							p Отток крови поможет в профилактике проблем с венами.
-							p При возникновении тяжести, отеков, боли в ногах и других тревожных симптомов обязательно посетите врача-флеболога.
-						.quiz__ps * Tisi PV. Varicose veins. BMJ Clin Evid. 2011; 2011:0212. Published 2011, Jan 5.
+						.quiz__inner
+							+icon('circle-small')(class='circle-small', width='93', height='185')
+							+icon('circle-big')(class='circle-big', width='224', height='447')
+							.quiz__step.quiz__step--answer
+								span.current VI
+								span /
+								span.all X
+							.quiz__answer Это полезно!
+							.quiz__answer-subtitle Поднимать ноги и упирать их в стенку можно не только вечером.
+							.quiz__answer-text
+								p Отток крови поможет в профилактике проблем с венами.
+								p При возникновении тяжести, отеков, боли в ногах и других тревожных симптомов обязательно посетите врача-флеболога.
+							.quiz__ps * Tisi PV. Varicose veins. BMJ Clin Evid. 2011; 2011:0212. Published 2011, Jan 5.
 
 				.quiz__arrow.quiz__arrow--next
 					+icon('arrow')(width='7', height='152')

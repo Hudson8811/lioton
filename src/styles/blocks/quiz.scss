@@ -247,10 +247,13 @@
 			#{$self} {
 				&__content {
 					position: relative;
+					pointer-events: auto !important;
 					padding: vwd(174) vwd(88) vwd(53);
 
 					@include max(md) {
 						padding: vw(72) vw(44);
+						width: 100%;
+						height: vw(380);
 					}
 
 					> picture img {
@@ -563,7 +566,8 @@
 		height: vwd(1100);
 		@include max(md) {
 			width: 100%;
-			height: vw(550);
+			height: vw(380);
+			transition: height 0.3s linear;
 		}
 
 	}
@@ -582,10 +586,11 @@
 
 		@include max(md) {
 			width: 100%;
-			height: vw(550);
+			height: 100%;
 			padding: vw(48) vw(40) vw(61);
 			border-width: vw(4);
 			border-radius: vw(9);
+			overflow: hidden;
 		}
 
 		&.swipe {
