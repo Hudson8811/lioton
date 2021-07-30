@@ -211,8 +211,17 @@ $(document).ready(function() {
 
 	/* Свайп */
 	$('.quiz__content--quest').swipe({
+		swipeStatus:function(event, phase, direction, distance, duration, fingers, fingerData) {
+			let vector = 0;
+			if (direction == 'left') vector = -1;
+			if (direction == 'right') vector = 1;
+			$(this).css('transform','translateX('+(vector*distance)+'px)');
+			if(phase==$.fn.swipe.phases.PHASE_CANCEL) {
+				$(this).removeAttr('style');
+			}
+		},
 		swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
-			if (distance > 50 && (direction == 'left' || direction == 'right')) {
+			if (distance > 1 && (direction == 'left' || direction == 'right')) {
 				var position;
 
 				if (direction == 'right'){
@@ -227,7 +236,7 @@ $(document).ready(function() {
 				if($(window).width() < 1080){
 					dBlock = 'flex';
 				}
-				if (allQuestions.test[curQuestion-1].correct === 'true') {
+				if (allQuestions.test[curQuestion-1].correct === position) {
 					points++;
 					$('.quiz__choice--correct').css('display', dBlock);
 					$('.quiz__choice--incorrect').hide();
@@ -236,7 +245,7 @@ $(document).ready(function() {
 					$('.quiz__choice--incorrect').css('display', dBlock);
 				}
 
-				if (allQuestions.test[curQuestion-1].correct === 'false') {
+				if (allQuestions.test[curQuestion-1].correct !== position) {
 					$('.circle-small, .circle-big').css('fill', '#E5539B');
 				} else {
 					$('.circle-small, .circle-big').css('fill', '#77ACD8');
@@ -244,12 +253,20 @@ $(document).ready(function() {
 
 			}
 		},
-		threshold:0
+		threshold:100
 	});
 
 	$('.quiz__content--answer').swipe({
+		swipeStatus:function(event, phase, direction, distance, duration, fingers, fingerData) {
+			let vector = 0;
+			if (direction == 'right') vector = 1;
+			$(this).css('transform','translateX('+(vector*distance)+'px)');
+			if(phase==$.fn.swipe.phases.PHASE_CANCEL) {
+				$(this).removeAttr('style');
+			}
+		},
 		swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
-			if (distance > 50 && direction == 'right') {
+			if (distance > 1 && direction == 'right') {
 				if (direction == 'right'){
 					if (curQuestion < countQuestion) {
 						curQuestion++;
@@ -269,7 +286,7 @@ $(document).ready(function() {
 				}
 			}
 		},
-		threshold:0
+		threshold:100
 	});
 
 	function slideQuest(direction){
@@ -289,7 +306,6 @@ $(document).ready(function() {
 
 		if ($(window).width() < 1080){
 			let targetHeight = $('.quiz__cards').data('height');
-			console.log(targetHeight);
 			if (targetHeight){
 				$('.quiz__cards').css('height',targetHeight);
 			}
@@ -320,7 +336,8 @@ $(document).ready(function() {
 		if($(window).width() < 1080){
 			dBlock = 'flex';
 		}
-		if (allQuestions.test[curQuestion-1].correct === 'true') {
+
+		if (allQuestions.test[curQuestion-1].correct === choise) {
 			points++;
 			$('.quiz__choice--correct').css('display', dBlock);
 			$('.quiz__choice--incorrect').hide();
@@ -330,7 +347,7 @@ $(document).ready(function() {
 		}
 
 		/* Цвет круглых паттернов в ответе */
-		if (allQuestions.test[curQuestion-1].correct === 'false') {
+		if (allQuestions.test[curQuestion-1].correct !== choise) {
 			$('.circle-small, .circle-big').css('fill', '#E5539B');
 		} else {
 			$('.circle-small, .circle-big').css('fill', '#77ACD8');
@@ -407,7 +424,7 @@ $(document).ready(function() {
 			$('.quiz__answer-text').html(text);
 
 			if ($(window).width() < 1080){
-				let questPadding = 144;
+				let questPadding = 155;
 				let questHeight = $('.quiz__content--answer .quiz__inner').prop('scrollHeight');
 				let targetHeight = ( (questHeight + questPadding) / $(window).width() ) * 100;
 				$('.quiz__cards').data('height',targetHeight+'vw');
